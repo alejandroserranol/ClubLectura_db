@@ -13,7 +13,7 @@ class CreateMiembrosTable extends Migration
      */
     public function up()
     {
-        Schema::create('miembro', function (Blueprint $table) {
+        Schema::create('miembros', function (Blueprint $table) {
             $table->string('dni', 11)->primary();
             $table->string('nombre', 45)->nullable($value = true);
             $table->string('apellido', 45)->nullable($value = true);
@@ -24,6 +24,8 @@ class CreateMiembrosTable extends Migration
             $table->date('fecha_alta')->nullable($value = false);
             $table->date('fecha_baja')->nullable($value = true);
             $table->timestamps();
+
+            $table->tinyInteger('situacion_actual')->length(1);
         });
     }
 

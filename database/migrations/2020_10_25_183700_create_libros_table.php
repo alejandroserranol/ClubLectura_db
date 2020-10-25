@@ -13,7 +13,7 @@ class CreateLibrosTable extends Migration
      */
     public function up()
     {
-        Schema::create('libro', function (Blueprint $table) {
+        Schema::create('libros', function (Blueprint $table) {
             $table->string('isbn', 45)->primary();
             $table->string('titulo', 45)->nullable($value = false);
             $table->string('autor', 45)->nullable($value = true);

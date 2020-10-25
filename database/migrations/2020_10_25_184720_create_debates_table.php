@@ -13,7 +13,7 @@ class CreateDebatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('debate', function (Blueprint $table) {
+        Schema::create('debates', function (Blueprint $table) {
             $table->string('codigo', 15)->primary();
             $table->string('curso', 11)->nullable($value = false);
             $table->string('genero', 15)->nullable($value = false);           
@@ -21,8 +21,8 @@ class CreateDebatesTable extends Migration
             $table->date('fecha_baja')->nullable($value = true);
             $table->timestamps();
 
-            $table->foreign('genero')->references('genero')->on('grupo')->onDelete('cascade');        
-            $table->foreign('libro')->references('isbn')->on('libro')->onDelete('cascade');
+            $table->foreign('genero')->references('genero')->on('grupos')->onDelete('cascade');        
+            $table->foreign('libro')->references('isbn')->on('libros')->onDelete('cascade');
         });
     }
 
