@@ -1,4 +1,4 @@
-INSERT INTO `libro` (`isbn`, `titulo`, `autor`, `tematica`, `editorial`, `publicacion`) VALUES
+INSERT INTO `libros` (`isbn`, `titulo`, `autor`, `tematica`, `editorial`, `publicacion`) VALUES
 ('978-0-09-990840-1', 'The old man and the sea', 'Hemingway, Ernest', 'Narrativa breve', 'Arrow', '2004-12-01'),
 ('978-84-08-10285-4', 'El primer hombre de Roma', 'McCullough, Colleen', 'Novela histórica', 'Booket', '2011-06-07'),
 ('978-84-08-16789-1', 'Drácula', 'Stoker, Bram', 'Narrativa de terror', 'Austral', '2017-02-28'),

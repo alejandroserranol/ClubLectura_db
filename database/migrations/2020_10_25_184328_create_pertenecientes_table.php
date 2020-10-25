@@ -16,7 +16,7 @@ class CreatePertenecientesTable extends Migration
         Schema::create('pertenecientes', function (Blueprint $table) {
             $table->string('miembro', 11);
             $table->string('genero', 15);            
-            $table->tinyInteger('coordinador')->default('0');
+            $table->tinyInteger('coordinador');
             $table->timestamps();
 
             $table->primary(['genero', 'miembro']);
@@ -24,6 +24,8 @@ class CreatePertenecientesTable extends Migration
             $table->foreign('miembro')->references('dni')->on('miembros')->onDelete('cascade');        
             $table->foreign('genero')->references('genero')->on('grupos')->onDelete('cascade');
         });
+        
+        DB::statement('ALTER TABLE `pertenecientes` MODIFY COLUMN `coordinador` TINYINT(1) DEFAULT(0)');
     }
 
     /**

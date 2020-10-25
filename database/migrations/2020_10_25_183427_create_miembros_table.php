@@ -20,13 +20,13 @@ class CreateMiembrosTable extends Migration
             $table->string('email', 45)->unique()->nullable($value = false);
             $table->string('telefono', 45)->nullable($value = true);
             $table->string('direccion', 45)->nullable($value = true);
-            $table->tinyInteger('situacion_actual')->default('1');
+            $table->tinyInteger('situacion_actual');
             $table->date('fecha_alta')->nullable($value = false);
             $table->date('fecha_baja')->nullable($value = true);
             $table->timestamps();
-
-            $table->tinyInteger('situacion_actual')->length(1);
         });
+
+        DB::statement('ALTER TABLE `miembros` MODIFY COLUMN `situacion_actual` TINYINT(1) DEFAULT(1)');
     }
 
     /**
